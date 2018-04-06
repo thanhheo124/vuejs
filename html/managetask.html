@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Quản lý nhiệm vụ</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  </head>
+  <body>
+    <h1>
+      Quản lý nhiệm vụ
+    </h1>
+      <div class="l-container">
+        <div id="tasks">
+          <img src="http://hgtech.vn/userfiles/images/doanh-nghiep-lien-doanh.jpg"/>
+          <h2>Nhiệm Vụ Mới</h2>
+          <ul class="p-list-group">
+            <li v-for='task in tasks' class="p-list-group__item">
+              {{task.body}}
+            </li>
+
+          </ul>
+        </div>
+      </div>
+
+    <script src="../js/manage.js"></script>
+  </body>
+</html>
