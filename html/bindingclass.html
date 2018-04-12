@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Quản lý nhiệm vụ</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/main.min.css">
+    <script src="../js/vue.js"></script>
+  </head>
+  <body id="binding-class">
+    <div class="static" v-bind:class="{ active: isActive, 'text-danger': hasError }">
+        class => static active
+    </div>
+
+    <!--Object binding không nhất thiết phải khai báo trong template-->
+
+    <div v-bind:class="classObject">Binding Class </div>
+
+    <!--Sử dụng cấu trúc mảng-->
+
+    <div v-bind:class="[activeClass, errorClass]">Cấu trúc mảng</div>
+
+    <script src="../js/binding.js"></script>
+</html>

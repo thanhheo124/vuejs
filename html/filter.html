@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Quản lý nhiệm vụ</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/main.min.css">
+    <script src="../js/vue.js"></script>
+  </head>
+  <body id="demo" class="container">
+    <img src="http://hgtech.vn/userfiles/images/doanh-nghiep-lien-doanh.jpg"/>
+    <input type="text" v-model="search" name="" value="" class="form-control">
+    <table class="table table-striped">
+
+      <thead>
+        <th v-for="column in columns">
+          <a @click="sortBy(column)">{{column | capitalize}}</a>
+        </th>
+      </thead>
+
+      <tbody>
+        <tr v-for="person in people | orderBy sortKey typeSort | filterBy search">
+          <td>{{person.name}}</td>
+          <td>{{person.age}}</td>
+        </tr>
+      </tbody>
+
+    </table>
+    <script src="../js/filterdemo.js"></script>
+  </body>
+
+</html>

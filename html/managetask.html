@@ -11,12 +11,12 @@
     <h1>
       Quản lý nhiệm vụ
     </h1>
-      <div class="l-container">
+      <div class="container">
         <div id="tasks">
           <img src="http://hgtech.vn/userfiles/images/doanh-nghiep-lien-doanh.jpg"/>
           <h2>Nhiệm Vụ Mới ({{tasks.length}})</h2>
           <ul class="p-list-group">
-            <li v-for="(task,index) in tasks" v-bind="inProcess" class="p-list-group__item">
+            <li v-for="task in tasks" v-bind="inProcess" class="p-list-group__item">
               <span @dblclick=editTask(index,task)>{{task.body}}</span>
               <button class="p-btn-delete" v-on:click="removeTask(index)" >&#10007;</button>
               <button class="p-btn-complete" v-on:click="completeTask(task)" >&#10004;</button>
@@ -31,7 +31,19 @@
           <hr>
           <pre>{{$data|json}}</pre>
         </div>
+        <div id="template">
+          <p>Sử dụng cú pháp mustache: {{ rawHtml }}</p>
+          <p>Sử dụng directive v-html: <span v-html="rawHtml"></span></p>
+        </div>
+
+        <div id="app">
+          <div class="p-product-image">
+            <img v-bind:src="image">
+          </div>
+        </div>
+
       </div>
     <script src="../js/manage.js"></script>
+    <script src="../js/template.js"></script>
   </body>
 </html>
